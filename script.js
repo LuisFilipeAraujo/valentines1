@@ -11,7 +11,7 @@ function criarCoração() {
   
   // Mostrar surpresa
   function mostrarSurpresa() {
-    alert("Você merece ganhar o mundo! Muito orgulho de você 💞");
+    alert("Você merece ganhar o mundo! Muito orgulho de você! 💞 Confira o botão abaixo das fotos para uma surpresa");
   
     // Mostrar o botão de presente
     document.getElementById('btnPresente').classList.remove('invisivel');
