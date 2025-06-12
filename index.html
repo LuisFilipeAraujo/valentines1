@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feliz Dia dos Namorados 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <!-- Tela de Boas-vindas -->
+  <div id="boasVindas" class="tela">
+    <h1>Oi, amor! 💝</h1>
+    <p>Parabéns por ser essa pessoa incrível! Mesmo distante nada vai nos separar e me alegra muito ver que nada pode te abalar. Fiz uma lembrancinha:</p>
+    <button onclick="mostrarConteudo()">Clique aqui</button>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <div id="conteudoPrincipal" class="tela escondido">
+    <h1>Feliz Dia dos Namorados! 💘</h1>
+    <p>Você é a razão do meu sorriso todos os dias. Te amo mais do que chocolate e olha que eu amo chocolate hein! 🍫💕</p>
+    <button onclick="mostrarSurpresa()">Clique aqui para uma mensagem</button>
+
+    <!-- Carrossel de Fotos -->
+    <div class="carrossel">
+      <button class="seta" onclick="trocarFoto(-1)">❮</button>
+      <img id="fotoCarrossel" src="fotos/001.jpg" alt="eu e tu">
+      <button class="seta" onclick="trocarFoto(1)">❯</button>
+    </div>
+
+    <!-- Botão para baixar o presente -->
+    <button id="btnPresente" class="invisivel" onclick="baixarPresente()">Clique aqui agora para ganhar um presentinho </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
