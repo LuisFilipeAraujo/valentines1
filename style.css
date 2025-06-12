@@ -1,151 +1,159 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #ffdde1, #ee9ca7);
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: #fff;
-    text-align: center;
-    overflow-x: hidden;
-    max-width: 100vw;
-    box-sizing: border-box;
-  }
-  
-  .tela {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    transition: opacity 1s ease, transform 1s ease;
-    padding: 20px;
-  }
-  
-  .escondido {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(20px);
-    position: absolute;
-    width: 100%;
-  }
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
 
-  .invisivel {
+.tela {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: opacity 1s ease, transform 1s ease;
+  padding: 20px;
+}
+
+.escondido {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  position: absolute;
+  width: 100%;
+}
+
+.invisivel {
   display: none;
 }
-  
+
+h1 {
+  font-size: 3em;
+  animation: pulse 2s infinite;
+}
+
+p {
+  font-size: 1.5em;
+  margin: 20px auto;
+  width: 80%;
+}
+
+button {
+  background-color: #fff;
+  color: #ff69b4;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Corações animados */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  transform: rotate(45deg);
+  animation: float 5s infinite ease-in;
+}
+.heart::before, .heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+@keyframes float {
+  0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Carrossel */
+.carrossel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.carrossel img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  display: block;
+}
+
+/* Setas posicionadas nas laterais da imagem */
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5em;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 2;
+  user-select: none;
+}
+
+.seta:first-of-type {
+  left: 0;
+}
+
+.seta:last-of-type {
+  right: 0;
+}
+
+/* Responsividade geral */
+@media (max-width: 768px) {
   h1 {
-    font-size: 3em;
-    animation: pulse 2s infinite;
+    font-size: 2rem;
+    text-align: center;
   }
-  
+
   p {
-    font-size: 1.5em;
-    margin: 20px auto;
-    width: 80%;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 1rem;
   }
-  
+
   button {
-    background-color: #fff;
-    color: #ff69b4;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease;
-    margin-top: 20px;
+    font-size: 1rem;
+    padding: 10px 20px;
   }
-  
-  button:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Corações animados */
-  .heart {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: pink;
-    transform: rotate(45deg);
-    animation: float 5s infinite ease-in;
-  }
-  .heart::before, .heart::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: pink;
-    border-radius: 50%;
-  }
-  .heart::before { top: -10px; left: 0; }
-  .heart::after { left: -10px; top: 0; }
-  
-  @keyframes float {
-    0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
-    100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
-  }
-  
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-  }
-  
-  /* Carrossel */
-  .carrossel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-    gap: 10px;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .carrossel img {
-    width: 300px;
-    max-width: 90vw;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    transition: transform 0.5s ease;
-  }
-  
+
   .seta {
-    font-size: 2em;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 0 10px;
+    font-size: 2rem;
+    padding: 5px;
   }
-  
-  /* Responsividade geral */
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
-      text-align: center;
-    }
-  
-    p {
-      font-size: 1.2rem;
-      text-align: center;
-      padding: 0 1rem;
-    }
-  
-    button {
-      font-size: 1rem;
-      padding: 10px 20px;
-    }
-  
-    .seta {
-      font-size: 2rem;
-      padding: 0 5px;
-    }
-  
-    .carrossel {
-      flex-direction: column;
-      gap: 20px;
-    }
-  }
+}
